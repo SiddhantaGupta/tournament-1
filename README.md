@@ -14,6 +14,7 @@ send get request to: "/player/[player id]"
 2. #### Add data to the API
 - #### add match
 send post request to: "/match/add"
+```
 with JSON data in body in the format:
 {
     "team1": [team id],
@@ -25,21 +26,27 @@ with JSON data in body in the format:
     "minute": [minute], eg - 55
     "venue": ["venue"]
 }
+```
 - #### add player
 send post request to: "/player/add"
+```
 with JSON data in body in the format:
 {
     "name": ["name"],
     "team": [team id]
 }
+```
 - #### add team
 send post request to: "/team/add"
+```
 with JSON data in body in the format:
 {
     "name": ["name"]
 }
+```
 - #### add result
 send post request to: "/result/add"
+```
 with JSON data in body in the format:
 {
     "winner": [team id],
@@ -49,10 +56,12 @@ with JSON data in body in the format:
     "best_fielder": [player id],
     "match": [match id]
 }
+```
 
 3. #### Update data in the API
 - #### update match
 send post request to: "/match/[match id]"
+```
 with JSON data in body in the format:
 {
     "team1": [team id],
@@ -64,21 +73,27 @@ with JSON data in body in the format:
     "minute": [minute], eg - 55
     "venue": ["venue"]
 }
+```
 - #### update player
 send post request to: "/player/[player id]"
+```
 with JSON data in body in the format:
 {
     "name": ["name"],
     "team": [team id]
 }
+```
 - #### update team
 send post request to: "/team/[team id]"
+```
 with JSON data in body in the format:
 {
     "name": ["name"]
 }
+```
 - #### update result
 send post request to: "/result/[result id]"
+```
 with JSON data in body in the format:
 {
     "winner": [team id],
@@ -88,6 +103,7 @@ with JSON data in body in the format:
     "best_fielder": [player id],
     "match": [match id],
 }
+```
 
 4. #### delete data in the API
 - #### delete match

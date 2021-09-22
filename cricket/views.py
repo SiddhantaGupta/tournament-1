@@ -147,7 +147,7 @@ def crud_match(request, crud):
             obj.save()
         except Match.DoesNotExist:
             return JsonResponse({
-                "error": "Meam does not exist"
+                "error": "Match does not exist"
             }, status=400)
         except Team.DoesNotExist:
             return JsonResponse({

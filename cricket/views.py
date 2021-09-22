@@ -35,6 +35,7 @@ def matches(request):
     matches = Match.objects.all()
     return JsonResponse([match.serialize() for match in matches], safe=False)
 
+# Read, Update, Delete match by id
 @csrf_exempt
 def match(request, id):
     if request.method == "GET":
@@ -67,7 +68,8 @@ def match(request, id):
             obj.venue = data["venue"]
             obj.save()
             return JsonResponse({
-        "success": f"operation update match"
+        "success": f"operation update match",
+        "data": f"{data}"
     })
         except Match.DoesNotExist:
             return JsonResponse({
@@ -114,6 +116,7 @@ def participants(request):
     participants = Team.objects.all()
     return JsonResponse([participant.serialize() for participant in participants], safe=False)
 
+# Read, Update, Delete result by id
 @csrf_exempt
 def result(request, id):
     if request.method == "GET":
@@ -143,7 +146,8 @@ def result(request, id):
             result.match = Match.objects.get(pk=int(data["match"]))
             result.save()
             return JsonResponse({
-        "success": f"operation update result"
+        "success": f"operation update result",
+        "data": f"{data}"
     })
         except Result.DoesNotExist:
             return JsonResponse({
@@ -188,7 +192,7 @@ def result(request, id):
             }, status=400)
 
 
-# complete detail of a single team
+# # Read, Update, Delete team by id
 @csrf_exempt
 def team(request, id):
     if request.method == "GET":
@@ -216,7 +220,8 @@ def team(request, id):
             team.country = data["name"]
             team.save()
             return JsonResponse({
-        "success": f"operation update team"
+        "success": f"operation update team",
+        "data": f"{data}"
     })
         except Team.DoesNotExist:
             return JsonResponse({
@@ -248,7 +253,7 @@ def team(request, id):
                 "error": "invalid HTTP request method"
             }, status=400)
 
-# complete detail of a single player
+# Read, Update, Delete player by id
 @csrf_exempt
 def player(request, id):
     if request.method == "GET":
@@ -275,7 +280,8 @@ def player(request, id):
             player.team = team
             player.save()
             return JsonResponse({
-        "success": f"operation update player"
+        "success": f"operation update player",
+        "data": f"{data}"
     })
         except Player.DoesNotExist:
             return JsonResponse({
@@ -311,7 +317,7 @@ def player(request, id):
                 "error": "invalid HTTP request method"
             }, status=400)
 
-# methods to Add, Delete, and Update
+# this methods adds new data
 @csrf_exempt
 def add(request, field):
     if request.method != "POST":
@@ -397,6 +403,18 @@ def add(request, field):
                 "error": f"Missing keys {missing}"
             }, status=400)
         try:
+            match_test = Match.objects.get(pk=int(data["match"]))
+            result_test = Result.objects.get(match=match_test)
+            return JsonResponse({
+                "error": "A result for this match already exists"
+            }, status=400)
+        except Match.DoesNotExist:
+            return JsonResponse({
+                "error": "match does not exist"
+            }, status=400)
+        except Result.DoesNotExist:
+            pass
+        try:
             winner = Team.objects.get(pk=int(data["winner"]))
             loser = Team.objects.get(pk=int(data["loser"]))
             man_of_the_match = Player.objects.get(pk=int(data["man_of_the_match"]))
@@ -423,7 +441,8 @@ def add(request, field):
             }, status=400)
 
     return JsonResponse({
-        "success": f"operation add {field}"
+        "success": f"operation add {field}",
+        "data": f"{data}"
     })
 
 def check_keys(required, data):

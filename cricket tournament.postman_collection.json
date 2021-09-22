@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "02bc9220-2667-4d6d-bd9c-b4c92b90bf73",
+		"name": "cricket tournament",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all matches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/matches",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"matches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get match by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/match/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"match",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get player by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/player/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"player",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all participants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/participants",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"participants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get team by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/team/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get result by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/result/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"result",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new team",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Greenland\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/team/add",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"team",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sehwak\",\n    \"team\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/player/add",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"player",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new match",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"team1\": 1,\n    \"team2\": 2,\n    \"year\": 2021,\n    \"month\": 7,\n    \"day\": 22,\n    \"hour\": 14,\n    \"minute\": 55,\n    \"venue\": \"Dubai\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/match/add",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"match",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new result",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"winner\": 4,\n    \"loser\": 5,\n    \"man_of_the_match\": 4,\n    \"bowler_of_the_match\": 4,\n    \"best_fielder\": 4,\n    \"match\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/result/add",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"result",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update team by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Greenland\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/team/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update player by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sehwak\",\n    \"team\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/player/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"player",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update match by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"team1\": 1,\n    \"team2\": 2,\n    \"year\": 2021,\n    \"month\": 7,\n    \"day\": 22,\n    \"hour\": 14,\n    \"minute\": 55,\n    \"venue\": \"Dubai\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/match/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"match",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update result by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"winner\": 1,\n    \"loser\": 2,\n    \"man_of_the_match\": 1,\n    \"bowler_of_the_match\": 2,\n    \"best_fielder\": 2,\n    \"match\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/result/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"result",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete match by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/match/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"match",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete team by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/team/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete player by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/player/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"player",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete result by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/result/6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"result",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://tournament-1.herokuapp.com"
+		}
+	]
+}

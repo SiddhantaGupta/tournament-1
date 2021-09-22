@@ -1,19 +1,19 @@
 ## API Endpoints
 1. #### Get data from the api
 - #### get list of matches and their results
-send get request to: "/matches"
+send GET request to: "/matches"
 - #### get details and result of a single match
-send get request to: "/match/[match id]"
+send GET request to: "/match/[match id]"
 - #### get list of participants
-send get request to: "/participants"
+send GET request to: "/participants"
 - #### get team profile
-send get request to: "/team/[team id]"
+send GET request to: "/team/[team id]"
 - #### get player profile
-send get request to: "/player/[player id]"
+send GET request to: "/player/[player id]"
 
 2. #### Add data to the API
 - #### add match
-send post request to: "/match/add"
+send POST request to: "/match/add"
 ```
 with JSON data in body in the format:
 {
@@ -28,7 +28,7 @@ with JSON data in body in the format:
 }
 ```
 - #### add player
-send post request to: "/player/add"
+send POST request to: "/player/add"
 ```
 with JSON data in body in the format:
 {
@@ -37,7 +37,7 @@ with JSON data in body in the format:
 }
 ```
 - #### add team
-send post request to: "/team/add"
+send POST request to: "/team/add"
 ```
 with JSON data in body in the format:
 {
@@ -45,7 +45,7 @@ with JSON data in body in the format:
 }
 ```
 - #### add result
-send post request to: "/result/add"
+send POST request to: "/result/add"
 ```
 with JSON data in body in the format:
 {
@@ -60,7 +60,7 @@ with JSON data in body in the format:
 
 3. #### Update data in the API
 - #### update match
-send post request to: "/match/[match id]"
+send POST request to: "/match/[match id]"
 ```
 with JSON data in body in the format:
 {
@@ -75,7 +75,7 @@ with JSON data in body in the format:
 }
 ```
 - #### update player
-send post request to: "/player/[player id]"
+send POST request to: "/player/[player id]"
 ```
 with JSON data in body in the format:
 {
@@ -84,7 +84,7 @@ with JSON data in body in the format:
 }
 ```
 - #### update team
-send post request to: "/team/[team id]"
+send POST request to: "/team/[team id]"
 ```
 with JSON data in body in the format:
 {
@@ -92,7 +92,7 @@ with JSON data in body in the format:
 }
 ```
 - #### update result
-send post request to: "/result/[result id]"
+send POST request to: "/result/[result id]"
 ```
 with JSON data in body in the format:
 {

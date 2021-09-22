@@ -1,18 +1,18 @@
 ## API Endpoints
-- #### Get data from the api
-1. #### get list of matches and their results
+1. #### Get data from the api
+- #### get list of matches and their results
 send get request to: "/matches"
-2. #### get details and result of a single match
+- #### get details and result of a single match
 send get request to: "/match/[match id]"
-3. #### get list of participants
+- #### get list of participants
 send get request to: "/participants"
-4. #### get team profile
+- #### get team profile
 send get request to: "/team/[team id]"
-5. #### get player profile
+- #### get player profile
 send get request to: "/player/[player id]"
 
-- #### Add data to the API
-1. #### add match
+2. #### Add data to the API
+- #### add match
 send post request to: "/match/add"
 with JSON data in body in the format:
 {
@@ -25,20 +25,20 @@ with JSON data in body in the format:
     "minute": [minute], eg - 55
     "venue": ["venue"]
 }
-2. #### add player
+- #### add player
 send post request to: "/player/add"
 with JSON data in body in the format:
 {
     "name": ["name"],
     "team": [team id]
 }
-3. #### add team
+- #### add team
 send post request to: "/team/add"
 with JSON data in body in the format:
 {
     "name": ["name"]
 }
-4. #### add result
+- #### add result
 send post request to: "/result/add"
 with JSON data in body in the format:
 {
@@ -50,8 +50,8 @@ with JSON data in body in the format:
     "match": [match id]
 }
 
-- #### Update data in the API
-1. #### update match
+3. #### Update data in the API
+- #### update match
 send post request to: "/match/[match id]"
 with JSON data in body in the format:
 {
@@ -64,20 +64,20 @@ with JSON data in body in the format:
     "minute": [minute], eg - 55
     "venue": ["venue"]
 }
-2. #### update player
+- #### update player
 send post request to: "/player/[player id]"
 with JSON data in body in the format:
 {
     "name": ["name"],
     "team": [team id]
 }
-3. #### update team
+- #### update team
 send post request to: "/team/[team id]"
 with JSON data in body in the format:
 {
     "name": ["name"]
 }
-4. #### update result
+- #### update result
 send post request to: "/result/[result id]"
 with JSON data in body in the format:
 {
@@ -89,17 +89,17 @@ with JSON data in body in the format:
     "match": [match id],
 }
 
-- #### delete data in the API
-1. #### delete match
+4. #### delete data in the API
+- #### delete match
 send DELETE request to: "/match/[match id]"
 
-2. #### delete player
+- #### delete player
 send DELETE request to: "/player/[player id]"
 
-3. #### delete team
+- #### delete team
 send DELETE request to: "/team/[team id]"
 
-4. #### delete result
+- #### delete result
 send DELETE request to: "/result/[result id]"
 
 ## Tech stack used

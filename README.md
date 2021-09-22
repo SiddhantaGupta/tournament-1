@@ -13,7 +13,7 @@ send get request to: "/player/[player id]"
 
 - #### Add data to the API
 1. #### add match
-send post request to: "/add/match"
+send post request to: "/match/add"
 with JSON data in body in the format:
 {
     "team1": [team id],
@@ -23,23 +23,23 @@ with JSON data in body in the format:
     "day": [day], eg - 22
     "hour": [hour], eg - 14
     "minute": [minute], eg - 55
-    "venue": ["venue"],
+    "venue": ["venue"]
 }
 2. #### add player
-send post request to: "/add/player"
+send post request to: "/player/add"
 with JSON data in body in the format:
 {
     "name": ["name"],
     "team": [team id]
 }
 3. #### add team
-send post request to: "/add/team"
+send post request to: "/team/add"
 with JSON data in body in the format:
 {
     "name": ["name"]
 }
 4. #### add result
-send post request to: "/add/result"
+send post request to: "/result/add"
 with JSON data in body in the format:
 {
     "winner": [team id],
@@ -47,15 +47,14 @@ with JSON data in body in the format:
     "man_of_the_match": [player id],
     "bowler_of_the_match": [player id],
     "best_fielder": [player id],
-    "match": [match id],
+    "match": [match id]
 }
 
 - #### Update data in the API
 1. #### update match
-send post request to: "/update/match"
+send post request to: "/match/[match id]"
 with JSON data in body in the format:
 {
-    "id": [match id]
     "team1": [team id],
     "team2": [team id],
     "year": [year], eg - 2021
@@ -63,28 +62,25 @@ with JSON data in body in the format:
     "day": [day], eg - 22
     "hour": [hour], eg - 14
     "minute": [minute], eg - 55
-    "venue": ["venue"],
+    "venue": ["venue"]
 }
 2. #### update player
-send post request to: "/update/player"
+send post request to: "/player/[player id]"
 with JSON data in body in the format:
 {
-    "id": [player id]
     "name": ["name"],
     "team": [team id]
 }
 3. #### update team
-send post request to: "/update/team"
+send post request to: "/team/[team id]"
 with JSON data in body in the format:
 {
-    "id": [team id]
     "name": ["name"]
 }
 4. #### update result
-send post request to: "/update/result"
+send post request to: "/result/[result id]"
 with JSON data in body in the format:
 {
-    "id": [result id]
     "winner": [team id],
     "loser": [team id],
     "man_of_the_match": [player id],
@@ -95,30 +91,18 @@ with JSON data in body in the format:
 
 - #### delete data in the API
 1. #### delete match
-send post request to: "/delete/match"
-with JSON data in body in the format:
-{
-    "id": [match id]
-}
+send DELETE request to: "/match/[match id]"
+
 2. #### delete player
-send post request to: "/delete/player"
-with JSON data in body in the format:
-{
-    "id": [player id]
-}
+send DELETE request to: "/player/[player id]"
+
 3. #### delete team
-send post request to: "/delete/team"
-with JSON data in body in the format:
-{
-    "id": [team id]
-}
+send DELETE request to: "/team/[team id]"
+
 4. #### delete result
-send post request to: "/delete/result"
-with JSON data in body in the format:
-{
-    "id": [result id]
-}
+send DELETE request to: "/result/[result id]"
 
 ## Tech stack used
 - Django v3.2.5
 - python v3.8.10
+- postgresql

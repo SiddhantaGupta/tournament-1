@@ -38,7 +38,7 @@ class Match(models.Model):
         except Result.DoesNotExist:
             result = []
         return {
-            "match_no": self.id,
+            "id": self.id,
             "team1": self.team1.country,
             "team2": self.team2.country,
             "timestamp": self.date,
@@ -81,6 +81,7 @@ class Result(models.Model):
 
     def serialize(self):
         return {
+            "id": self.id,
             "match_no": self.match.id,
             "winner": self.winner.country,
             "loser": self.loser.country,
